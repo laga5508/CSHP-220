@@ -5,17 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld"
         mc:Ignorable="d"
-        WindowState="Maximized"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Hola Mundo Cruel" Height="350" Width="525">
  
     <StackPanel> 
 
         <TextBlock>Enter Name:</TextBlock>
-        <TextBox x:Name="uxName"></TextBox>
+        <TextBox x:Name="uxName" TextChanged="uxName_TextChanged"></TextBox>
         <TextBlock>Enter Password:</TextBlock>
-        <TextBox x:Name="uxPassword"></TextBox>
-        <Button x:Name="uxSubmit" Click="uxSubmit_Click">Submit</Button>
-        <Button>
+        <TextBox x:Name="uxPassword" TextChanged="uxName_TextChanged"></TextBox>
+        <Button x:Name="uxSubmit" Click="uxSubmit_Click" IsEnabled="False">Submit</Button>
+        <Button IsEnabled="False" Visibility="Hidden">
             <StackPanel Orientation="Horizontal">
                 <Image Margin="10" Source="images/thump.png" />
                 <TextBlock Margin="10" VerticalAlignment="Center" Text="Thumbs Up" />

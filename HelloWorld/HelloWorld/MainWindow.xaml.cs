@@ -23,12 +23,20 @@ namespace HelloWorld
         public MainWindow()
         {
             InitializeComponent();
-            WindowState = WindowState.Maximized;
+            //WindowState = WindowState.Maximized;
         }
 
         private void uxSubmit_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Submittina a password");
+            MessageBox.Show("Login Submited");
+        }
+
+        private void uxName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(uxName.Text) & !String.IsNullOrEmpty(uxPassword.Text))
+            {
+                uxSubmit.IsEnabled = true;
+            }
         }
     }
 }
