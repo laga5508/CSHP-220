@@ -7,12 +7,28 @@
         mc:Ignorable="d"
         Title="Hola Mundo Cruel" Height="350" Width="525">
  
-    <StackPanel> 
-
+    <StackPanel x:Name="uxContainer">
+       
+      
         <TextBlock>Enter Name:</TextBlock>
-        <TextBox x:Name="uxName" TextChanged="uxName_TextChanged"></TextBox>
+
+        <TextBox x:Name="uxName" 
+        Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+        </TextBox>
+
+        <Label x:Name="uxNameError" 
+            Content="{Binding NameError, UpdateSourceTrigger=PropertyChanged}"></Label>
+
         <TextBlock>Enter Password:</TextBlock>
-        <TextBox x:Name="uxPassword" TextChanged="uxName_TextChanged"></TextBox>
+        <TextBox x:Name="uxPassword"
+        Text="{Binding Password, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+        </TextBox>
+
+        <Label x:Name="uxPasswordError" 
+            Content="{Binding PasswordError, UpdateSourceTrigger=PropertyChanged}"></Label>
+
+        
+        
         <Button x:Name="uxSubmit" Click="uxSubmit_Click" IsEnabled="False">Submit</Button>
         <Button IsEnabled="False" Visibility="Hidden">
             <StackPanel Orientation="Horizontal">
@@ -20,6 +36,7 @@
                 <TextBlock Margin="10" VerticalAlignment="Center" Text="Thumbs Up" />
             </StackPanel>
         </Button>
+       
 
     </StackPanel>
 </Window>
