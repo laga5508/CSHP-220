@@ -20,7 +20,7 @@ namespace HelloWorld
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Models.User user = new Models.User();
+       
         public MainWindow()
         {
             InitializeComponent();

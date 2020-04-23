@@ -92,13 +92,13 @@ namespace HelloWorld.Models
         {
             get
             {
-               
+
                 switch (columnName)
                 {
                     case "Name":
                         {
                             NameError = "";
-                            
+
                             if (string.IsNullOrEmpty(Name))
                             {
                                 NameError = "Name cannot be empty.";
@@ -123,7 +123,7 @@ namespace HelloWorld.Models
                             return Password;
                         }
                 }
-                return null; 
+                return null;
             }
         }
 
