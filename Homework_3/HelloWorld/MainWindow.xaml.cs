@@ -32,7 +32,20 @@ namespace HelloWorld
 
         private void uxSubmit_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Login Submited");
+            int x = 1;
+            
+
+            try
+            {
+                x = x / (x - 1); // Induce a DivideByZeroException
+            }
+            catch (DivideByZeroException)
+            {
+                // do 
+                throw;
+            }
+
+            MessageBox.Show("Submitting password:" + uxPassword.Text);
             var window = new SecondWindow();
             Application.Current.MainWindow = window;
             Close();

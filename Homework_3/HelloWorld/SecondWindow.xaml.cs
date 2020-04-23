@@ -68,7 +68,6 @@ namespace HelloWorld
                 _lastHeaderClicked = headerClicked;
                 _lastDirection = direction;
 
-                
            
         }
 

@@ -33,6 +33,10 @@ namespace HelloWorld
         private void uxSubmit_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Login Submited");
+            var window = new SecondWindow();
+            Application.Current.MainWindow = window;
+            Close();
+            window.Show();
         }
 
         private void uxName_TextChanged(object sender, TextChangedEventArgs e)
@@ -42,5 +46,7 @@ namespace HelloWorld
                 uxSubmit.IsEnabled = true;
             }
         }
+
+        
     }
 }

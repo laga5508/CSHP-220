@@ -13,7 +13,7 @@
         <TextBlock>Enter Name:</TextBlock>
 
         <TextBox x:Name="uxName" 
-        Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+        Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" TextChanged="uxName_TextChanged">
         </TextBox>
 
         <Label x:Name="uxNameError" 
@@ -21,7 +21,7 @@
 
         <TextBlock>Enter Password:</TextBlock>
         <TextBox x:Name="uxPassword"
-        Text="{Binding Password, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+        Text="{Binding Password, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" TextChanged="uxName_TextChanged">
         </TextBox>
 
         <Label x:Name="uxPasswordError" 
