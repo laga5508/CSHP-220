@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 
 namespace HelloWorld
 {
@@ -24,10 +25,14 @@ namespace HelloWorld
         public MainWindow()
         {
             InitializeComponent();
+
             uxContainer.DataContext = user;
-            //uxName.DataContext = user;
-            //uxNameError.DataContext = user;
-            //WindowState = WindowState.Maximized;
+
+            var sample = new SampleContext();
+            sample.User.Load();
+            var users = sample.User.Local.ToObservableCollection();
+            uxList.ItemsSource = users;
+
         }
 
         private void uxSubmit_Click(object sender, RoutedEventArgs e)

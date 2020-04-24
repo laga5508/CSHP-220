@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld"
         mc:Ignorable="d"
-        Title="SecondWindow" Height="300" Width="300">
+        Title="SecondWindow" Height="450" Width="800">
     <Grid>
-        <ListView x:Name="uxList"></ListView>
+        <ListView x:Name="uxList">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" />
+                    <GridViewColumn Header="Password" DisplayMemberBinding="{Binding Path=Password}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
     </Grid>
 </Window>
