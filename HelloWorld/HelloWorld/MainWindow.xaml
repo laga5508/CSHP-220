@@ -30,6 +30,8 @@
         <TextBox x:Name="uxPassword"
         Text="{Binding Password, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" TextChanged="uxName_TextChanged">
         </TextBox>
+        
+
 
         <Label x:Name="uxPasswordError" 
             Content="{Binding PasswordError, UpdateSourceTrigger=PropertyChanged}"></Label>

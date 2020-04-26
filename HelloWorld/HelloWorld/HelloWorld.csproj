@@ -7,7 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\adsb.jpg" />
+    <None Remove="images\Test.png" />
     <None Remove="images\thump.png" />
+    <None Remove="images\wpf-menus-new.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,7 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\adsb.jpg" />
+    <Resource Include="images\Test.png" />
     <Resource Include="images\thump.png" />
+    <Resource Include="images\wpf-menus-new.png" />
   </ItemGroup>
 
 </Project>
