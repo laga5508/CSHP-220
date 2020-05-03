@@ -1,0 +1,24 @@
+﻿<Window x:Class="Homework_4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework_4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <StackPanel>
+        
+
+            <TextBlock HorizontalAlignment="Center" FontSize="18">Enter ZipCode:</TextBlock>
+        
+        <Border x:Name="uxZipBorder" BorderBrush="Red" BorderThickness="0" >
+            <TextBox x:Name="uxPhoneNumber" Height="40"  TextChanged="uxPhoneNumber_TextChanged">
+
+            </TextBox>
+        </Border>
+        <Button x:Name="uxSubmitBtn" IsEnabled="False" Height="40" FontSize="16">Submit</Button>
+
+    </StackPanel>
+
+</Window>
