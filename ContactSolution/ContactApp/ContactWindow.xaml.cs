@@ -51,5 +51,28 @@ namespace ContactApp
             DialogResult = false;
             Close();
         }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Contact != null)
+            {
+                if (Contact.PhoneType == "Home")
+                {
+                    uxHome.IsChecked = true;
+                }
+                else
+                {
+                    uxMobile.IsChecked = true;
+                }
+                uxSubmit.Content = "Update";
+            }
+            else
+            {
+                Contact = new ContactModel();
+                Contact.CreatedDate = DateTime.Now;
+            }
+
+            uxGrid.DataContext = Contact;
+        }
+
     }
 }

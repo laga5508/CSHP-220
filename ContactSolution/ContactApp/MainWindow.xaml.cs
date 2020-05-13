@@ -28,8 +28,40 @@ namespace ContactApp
             LoadContacts();
         }
 
+        private void uxFileNew_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ContactWindow();
+
+            if (window.ShowDialog() == true)
+            {
+                var uiContactModel = window.Contact;
+
+                var repositoryContactModel = uiContactModel.ToRepositoryModel();
+
+                App.ContactRepository.Add(repositoryContactModel);
+                LoadContacts();
+
+                // OR
+                //App.ContactRepository.Add(window.Contact.ToRepositoryModel());
+            }
+        }
+
         private void uxFileChange_Click(object sender, RoutedEventArgs e)
         {
+            var window = new ContactWindow();
+            window.Contact = selectedContact;
+
+            if (window.ShowDialog() == true)
+            {
+                App.ContactRepository.Update(window.Contact.ToRepositoryModel());
+                LoadContacts();
+            }
+        }
+
+        private void uxFileChange_Loaded(object sender, RoutedEventArgs e)
+        {
+            uxFileChange.IsEnabled = (selectedContact != null);
+            uxContextFileChange.IsEnabled = uxFileChange.IsEnabled;
         }
 
         private void uxFileDelete_Click(object sender, RoutedEventArgs e)
@@ -57,26 +89,12 @@ namespace ContactApp
             //uxContactList.ItemsSource = uiContactModelList;
         }
 
-        private void uxFileNew_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new ContactWindow();
+        
 
-            if (window.ShowDialog() == true)
-            {
-                var uiContactModel = window.Contact;
-
-                var repositoryContactModel = uiContactModel.ToRepositoryModel();
-
-                App.ContactRepository.Add(repositoryContactModel);
-                LoadContacts();
-
-                // OR
-                //App.ContactRepository.Add(window.Contact.ToRepositoryModel());
-            }
-        }
-
+        private ContactModel selectedContact;
         private void uxContactList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            selectedContact = (ContactModel)uxContactList.SelectedValue;
           
         }
 
@@ -105,6 +123,19 @@ namespace ContactApp
             AdornerLayer.GetAdornerLayer(listViewSortCol).Add(listViewSortAdorner);
             uxContactList.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
 
+        }
+
+        private void uxFileDelete_Loaded(object sender, RoutedEventArgs e)
+        {
+            uxFileDelete.IsEnabled = (selectedContact != null);
+            uxContextFileDelete.IsEnabled = uxFileDelete.IsEnabled;
+        }
+
+        private void uxFileDelete_Click_1(object sender, RoutedEventArgs e)
+        {
+            App.ContactRepository.Remove(selectedContact.Id);
+            selectedContact = null;
+            LoadContacts();
         }
     }
 }
