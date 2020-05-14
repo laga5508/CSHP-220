@@ -21,10 +21,7 @@ namespace ContactApp
 
         private void uxSubmit_Click(object sender, RoutedEventArgs e)
         {
-            Contact = new ContactModel();
-
-            Contact.Name = uxName.Text;
-            Contact.Email = uxEmail.Text;
+                   
 
             if (uxHome.IsChecked.Value)
             {
@@ -35,11 +32,7 @@ namespace ContactApp
                 Contact.PhoneType = "Mobile";
             }
 
-            Contact.PhoneNumber = uxPhoneNumber.Text;
-            Contact.Age = (int)uxAgeSlider.Value;
-            Contact.Notes = uxNotes.Text;
-            Contact.CreatedDate = DateTime.Now;
-
+            
             // This is the return value of ShowDialog( ) below
             DialogResult = true;
             Close();
