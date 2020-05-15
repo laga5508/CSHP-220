@@ -79,6 +79,14 @@ namespace ObstacleApp
 
         private void uxFileChange_Click(object sender, RoutedEventArgs e)
         {
+            var window = new ObstacleWindow();
+            window.Obstacle = selectedObstacle;
+
+            if (window.ShowDialog() == true)
+            {
+                App.ObstacleRepository.Update(window.Obstacle.ToRepositoryModel());
+                LoadObstacles();
+            }
         }
 
         private void uxFileDelete_Click(object sender, RoutedEventArgs e)
@@ -130,6 +138,11 @@ namespace ObstacleApp
             selectedObstacle = (ObstacleModel)uxObstacleList.SelectedValue;
         }
 
-        
+              private void uxFileChange_Loaded(object sender, RoutedEventArgs e)
+        {
+            uxFileChange.IsEnabled = (selectedObstacle != null);
+            uxContextFileChange.IsEnabled = uxFileChange.IsEnabled;
+        }
+
     }
 }

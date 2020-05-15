@@ -28,6 +28,8 @@
             <MenuItem x:Name="uxFileNew" Header="_File">
                 <MenuItem x:Name="uxNew" Header=" _New Obstacle"  Click="uxNew_Click"/>
                 <MenuItem x:Name="uxImport" Header=" _Import" Click="uxImport_Click"/>
+                <MenuItem x:Name="uxFileChange" Header="_Modify" Click="uxFileChange_Click" 
+  Loaded="uxFileChange_Loaded" />
                 <MenuItem x:Name="uxFileDelete" Header="_Delete" Loaded="uxFileDelete_Loaded" Click="uxFileDelete_Click"/>
                 <MenuItem x:Name="uxClose" Header= " _Close" Click="uxClose_Click"/>
             </MenuItem>

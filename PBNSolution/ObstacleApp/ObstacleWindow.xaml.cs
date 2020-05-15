@@ -23,6 +23,17 @@ namespace ObstacleApp
             InitializeComponent();
             ShowInTaskbar = false;
         }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            uxSubmit.Content = "Update";
+            Obstacle = new ObstacleModel();
+            uxLatDD.Visibility = Visibility.Visible;
+            uxLatDDLabel.Visibility = Visibility.Visible;
+            uxLonDD.Visibility = Visibility.Visible;
+            uxLonDDLabel.Visibility = Visibility.Visible;
+           
+        }
+
         public ObstacleModel Obstacle { get; set; }
 
         private void uxSubmit_Click(object sender, RoutedEventArgs e)
