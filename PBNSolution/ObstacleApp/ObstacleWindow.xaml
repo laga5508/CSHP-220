@@ -1,0 +1,78 @@
+﻿<Window x:Class="ObstacleApp.ObstacleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ObstacleApp"
+        mc:Ignorable="d"
+        Title="ObstacleWindow" Height="375" Width="400" >
+    <Grid x:Name="uxGrid" Background="LightGray">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Obstale Study:</TextBlock>
+        <TextBox x:Name="uxObsStudy" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="275" />
+
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Type:</TextBlock>
+        <TextBox x:Name="uxObsType" Grid.Row="1" Grid.Column="1" FontFamily="As Circular Light" VerticalAlignment="Center" HorizontalAlignment="Left" Width="275"/>
+
+
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lat DMS:</TextBlock>
+        <TextBox x:Name="uxObsLatDms" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+
+
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lon DMS:</TextBlock>
+        <TextBox x:Name="uxObsLonDms" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+
+
+
+
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lat DD:</TextBlock>
+        <TextBox x:Name="uxLatDD" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275" />
+
+
+        <TextBlock Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" FontFamily="AS Circular Light">Lon DD:</TextBlock>
+        <TextBox x:Name="uxLonDD" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275" />
+
+        <TextBlock Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lat Hem:</TextBlock>
+        <TextBox x:Name="uxLatHem" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+
+
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lon Hem:</TextBlock>
+        <TextBox x:Name="uxLonHem" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+
+
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">AGL Height:</TextBlock>
+        <TextBox x:Name="uxAglHeight" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+
+
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">MSL Height:</TextBlock>
+        <TextBox x:Name="uxMslHeight" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+
+
+        <TextBlock Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" FontFamily="AS Circular Light">ICAO:</TextBlock>
+        <TextBox x:Name="uxIcao" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="11" HorizontalAlignment="Right">
+            <Button x:Name="uxSubmit" Width="40"  MinWidth="20" HorizontalAlignment="Center" Click="uxSubmit_Click" Margin="10">Add</Button>
+            <Button x:Name="uxCancel" Width="40" MinWidth="20" HorizontalAlignment="Center"  Margin="10">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>
