@@ -70,7 +70,8 @@ namespace ObstacleApp
 
                 var repositoryObstacleModel = UiObstacleModel.ToRepositoryModel();
                 App.ObstacleRepository.Add(repositoryObstacleModel);
-               
+
+                LoadObstacles();
                 // OR
                 //App.ContactRepository.Add(window.Contact.ToRepositoryModel());
             }

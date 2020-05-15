@@ -17,7 +17,7 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto"  />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
@@ -43,15 +43,15 @@
 
 
 
-        <TextBlock Margin="5" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lat DD:</TextBlock>
-        <TextBox x:Name="uxLatDD" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275" />
+        <TextBlock Margin="5" Grid.Column="0" Grid.Row="4" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lat DD:</TextBlock>
+        <TextBox x:Name="uxLatDD" Grid.Column="1" Grid.Row="4" Visibility="Collapsed" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275" />
 
 
-        <TextBlock Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" FontFamily="AS Circular Light">Lon DD:</TextBlock>
-        <TextBox x:Name="uxLonDD" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275" />
+        <TextBlock Grid.Column="0" Grid.Row="5" Visibility="Collapsed"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" FontFamily="AS Circular Light">Lon DD:</TextBlock>
+        <TextBox x:Name="uxLonDD" Grid.Column="1" Grid.Row="5" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275" />
 
         <TextBlock Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lat Hem:</TextBlock>
-        <TextBox x:Name="uxLatHem" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+        <TextBox x:Name="uxLatHem" Grid.Column="1" Grid.Row="6"  VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
 
 
         <TextBlock Margin="5" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lon Hem:</TextBlock>

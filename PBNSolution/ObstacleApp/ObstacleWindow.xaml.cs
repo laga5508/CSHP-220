@@ -29,9 +29,9 @@ namespace ObstacleApp
         {
             Obstacle = new ObstacleModel();
             Obstacle.ObsStudy = uxObsStudy.Text.ToUpper();
-            Obstacle.ObsType = uxObsType.Text.ToUpper();
-            Obstacle.ObsLatitudeDms = double.Parse(uxObsLatDms.Text);
-            Obstacle.ObsLongitudeDms = double.Parse(uxObsLonDms.Text);
+            Obstacle.ObsType = uxObsType.Text.ToUpper();           
+            Obstacle.ObsLatitudeDms = Double.Parse(uxObsLatDms.Text);
+            Obstacle.ObsLongitudeDms = Double.Parse(uxObsLonDms.Text);
             Obstacle.ObsLatitudeDd = Conversions.ConvertPosition(Obstacle.ObsLatitudeDms);
             Obstacle.ObsLongitudeDd = Conversions.ConvertPosition(Obstacle.ObsLongitudeDms);
             Obstacle.ObsLongitudeHemisphere = uxLonHem.Text.ToUpper();
