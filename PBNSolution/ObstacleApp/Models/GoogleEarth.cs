@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using Microsoft.Win32;
+using System.Diagnostics;
 
 namespace ObstacleApp.Models
 {
     static class GoogleEarth
     {
         public static StringBuilder printObstacle = new StringBuilder();
-
+        public static StringBuilder path = new StringBuilder();
 
         public static void printToGoogleEarth(ObstacleModel obstacle)
         {
@@ -32,14 +33,29 @@ namespace ObstacleApp.Models
                 + "</Placemark></Document></kml>"
                 );
          
-            string fileName = string.Format($"{ObsStudy}.kml");
+            string fileName = string.Format($"Obstacle-{ObsStudy}.kml");
             SaveFileDialog SaveFile = new SaveFileDialog();
-            SaveFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            
             SaveFile.Filter = "Google Earth files (*.kml)|*.kml|All files (*.*)|*.*";
             SaveFile.FileName = fileName;
+            SaveFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string Mypath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+           
+
+
+
+
             if (SaveFile.ShowDialog() == true)
             {
-                File.WriteAllText(fileName, printObstacle.ToString());
+               
+                using(StreamWriter sw = new StreamWriter(SaveFile.FileName, false))
+                {
+                    sw.Write(printObstacle.ToString());
+                    printObstacle.Clear();
+                    
+                }
+                Process.Start(SaveFile.FileName);
 
             }
 
