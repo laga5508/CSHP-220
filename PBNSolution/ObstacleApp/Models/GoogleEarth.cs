@@ -55,7 +55,11 @@ namespace ObstacleApp.Models
                     printObstacle.Clear();
                     
                 }
-                Process.Start(SaveFile.FileName);
+                Process myProcess = new Process();
+                myProcess.StartInfo.UseShellExecute = true;
+                myProcess.StartInfo.FileName = SaveFile.FileName;
+                myProcess.StartInfo.CreateNoWindow = true;
+                myProcess.Start();
 
             }
 
