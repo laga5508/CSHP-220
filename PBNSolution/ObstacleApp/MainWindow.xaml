@@ -40,8 +40,8 @@
             <ListView.ContextMenu>
                 <ContextMenu>
                     <MenuItem x:Name="uxContextFileNew" Header="_New" />
-                    <MenuItem x:Name="uxContextFileChange" Header="_Modify"  />
-                    <MenuItem x:Name="UxExportToGoogleEarth" Header="_Export to Google Earth"/>
+                    <MenuItem x:Name="uxContextFileChange" Header="_Modify" Click="uxFileChange_Click" Loaded="uxFileChange_Loaded"   />
+                    <MenuItem x:Name="UxContextExportToGoogleEarth" Loaded="uxExportToGoogle_Loaded" Click="UxExportToGoogleEarth_Click" Header="_Export to Google Earth"/>
                     <MenuItem x:Name="uxContextFileDelete" Header="_Delete" />
                 </ContextMenu>
             </ListView.ContextMenu>

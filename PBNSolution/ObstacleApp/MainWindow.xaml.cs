@@ -93,8 +93,7 @@ namespace ObstacleApp
         {
             App.ObstacleRepository.Remove(selectedObstacle.ObsId);
             selectedObstacle = null;
-            LoadObstacles();
-            
+            LoadObstacles();            
         }
 
         private void uxFileDelete_Loaded(object sender, RoutedEventArgs e)
@@ -144,5 +143,15 @@ namespace ObstacleApp
             uxContextFileChange.IsEnabled = uxFileChange.IsEnabled;
         }
 
+        private void uxExportToGoogle_Loaded(object sender, RoutedEventArgs e)
+        {
+            UxContextExportToGoogleEarth.IsEnabled = (selectedObstacle != null);
+
+        }
+
+        private void UxExportToGoogleEarth_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
