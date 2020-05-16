@@ -16,6 +16,7 @@ using System.IO;
 using Microsoft.Win32;
 using ObstacleApp.Models;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 
 namespace ObstacleApp
 {
@@ -151,7 +152,7 @@ namespace ObstacleApp
 
         private void UxExportToGoogleEarth_Click(object sender, RoutedEventArgs e)
         {
-
+            GoogleEarth.printToGoogleEarth(selectedObstacle);
         }
     }
 }
