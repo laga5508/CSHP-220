@@ -57,6 +57,7 @@ namespace ObstacleRepository
             var items = DatabaseManager.Instance.Obstacle
               .Select(t => new ObstacleModel
               {
+                  ObsId = t.ObsId,
                   ObsStudy = t.ObsStudy,
                   ObsType = t.ObstType,
                   ObsLatitudeDms = t.ObsLatitudeDms,
@@ -75,7 +76,7 @@ namespace ObstacleRepository
 
         public bool Update(ObstacleModel obstacleModel)
         {
-            var original = DatabaseManager.Instance.Obstacle.Find(obstacleModel.ObsStudy);
+            var original = DatabaseManager.Instance.Obstacle.Find(obstacleModel.ObsId);
 
             if (original != null)
             {
@@ -87,10 +88,10 @@ namespace ObstacleRepository
             return false;
         }
 
-        public bool Remove(string ObsStudy)
+        public bool Remove(int ObsId)
         {
             var items = DatabaseManager.Instance.Obstacle
-                                .Where(t => t.ObsStudy == ObsStudy);
+                                .Where(t => t.ObsId == ObsId);
 
             if (items.Count() == 0)
             {
@@ -107,6 +108,7 @@ namespace ObstacleRepository
         {
             var contactDb = new Obstacle
             {
+                ObsId = obstacleModel.ObsId,
                 ObsStudy = obstacleModel.ObsStudy,
                 ObstType = obstacleModel.ObsType,
                 ObsLongtitudeDms = obstacleModel.ObsLongitudeDms,

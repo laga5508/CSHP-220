@@ -91,7 +91,7 @@ namespace ObstacleApp
 
         private void uxFileDelete_Click(object sender, RoutedEventArgs e)
         {
-            App.ObstacleRepository.Remove(selectedObstacle.ObsStudy);
+            App.ObstacleRepository.Remove(selectedObstacle.ObsId);
             selectedObstacle = null;
             LoadObstacles();
             
