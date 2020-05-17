@@ -29,15 +29,18 @@ namespace ObstacleApp
         {
             InitializeComponent();
             LoadObstacles();
+            LoadRunways();
+        }
+
+        private void LoadRunways()
+        {
+            var runways = App.RunwayRepsitory.GetAll();
         }
 
         private void LoadObstacles()
         {
-            var obstacles = App.ObstacleRepository.GetAll();
-           
-            
+            var obstacles = App.ObstacleRepository.GetAll();         
             uxObstacleList.ItemsSource = obstacles.Select(t => ObstacleModel.ToModel(t)).ToList();
-
         }
 
         private void uxImport_Click(object sender, RoutedEventArgs e)
