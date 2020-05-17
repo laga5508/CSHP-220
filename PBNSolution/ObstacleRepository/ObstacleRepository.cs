@@ -22,6 +22,16 @@ namespace ObstacleRepository
         public string ObsIcao { get; set; }
     }
 
+    public class RunwayModel
+    {
+
+    }
+
+    public class RunwayRepsitory
+    {
+
+    }
+
     public class ObstacleRepository
     {
         public ObstacleModel Add(ObstacleModel obstacleModel)

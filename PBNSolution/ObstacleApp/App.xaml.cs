@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ObstacleRepository;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -14,11 +15,15 @@ namespace ObstacleApp
     public partial class App : Application
     {
         private static ObstacleRepository.ObstacleRepository obstacleRepository;
+        private static ObstacleRepository.RunwayRepsitory runwayRepsitory;
+
 
         static App()
         {
             obstacleRepository = new ObstacleRepository.ObstacleRepository();
+            runwayRepsitory = new ObstacleRepository.RunwayRepsitory();
         }
+            
 
         public static ObstacleRepository.ObstacleRepository ObstacleRepository
         {
@@ -27,6 +32,14 @@ namespace ObstacleApp
                 return obstacleRepository;
             }
 
+        }
+
+        public static ObstacleRepository.RunwayRepsitory RunwayRepsitory
+        {
+            get
+            {
+                return runwayRepsitory;
+            }
         }
     }
 }

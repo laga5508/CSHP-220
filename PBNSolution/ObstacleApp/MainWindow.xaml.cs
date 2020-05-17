@@ -34,6 +34,8 @@ namespace ObstacleApp
         private void LoadObstacles()
         {
             var obstacles = App.ObstacleRepository.GetAll();
+           
+            
             uxObstacleList.ItemsSource = obstacles.Select(t => ObstacleModel.ToModel(t)).ToList();
 
         }

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObstacleApp", "ObstacleApp\ObstacleApp.csproj", "{A4A24CE4-E2C4-49A5-A8F6-0B076025CBAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObstacleApp", "ObstacleApp\ObstacleApp.csproj", "{A4A24CE4-E2C4-49A5-A8F6-0B076025CBAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObstacleDb", "ContactDb\ObstacleDb.csproj", "{1D1290D2-6415-4A6E-AAC2-5D3D497D3528}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObstacleDb", "ContactDb\ObstacleDb.csproj", "{1D1290D2-6415-4A6E-AAC2-5D3D497D3528}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObstacleRepository", "ObstacleRepository\ObstacleRepository.csproj", "{29C2AFCE-027B-461E-BDDD-B0E3B9A62D8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObstacleRepository", "ObstacleRepository\ObstacleRepository.csproj", "{29C2AFCE-027B-461E-BDDD-B0E3B9A62D8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
