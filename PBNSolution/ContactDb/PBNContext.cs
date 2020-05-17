@@ -44,7 +44,7 @@ namespace ObstacleDb
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.ObstType).HasMaxLength(50);
+                entity.Property(e => e.ObsType).HasMaxLength(50);
             });
 
             modelBuilder.Entity<Runway>(entity =>
@@ -62,7 +62,7 @@ namespace ObstacleDb
 
                 entity.Property(e => e.Long).HasColumnName("long");
 
-                entity.Property(e => e.Runway1)
+                entity.Property(e => e.RWY)
                     .HasColumnName("runway")
                     .HasMaxLength(10)
                     .IsFixedLength();

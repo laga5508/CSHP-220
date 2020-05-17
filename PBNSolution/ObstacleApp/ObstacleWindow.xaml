@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ObstacleApp"
         mc:Ignorable="d"
-        Title="ObstacleWindow" Height="375" Width="400" >
+        Title="ObstacleWindow" Height="375" Width="400" 
+    FocusManager.FocusedElement="{Binding ElementName=uxObsStudy}"
+        Loaded="Window_Loaded">
+   
     <Grid x:Name="uxGrid" Background="LightGray">
 
         <Grid.ColumnDefinitions>
@@ -27,51 +30,51 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <TextBlock Margin="5" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Obstale Study:</TextBlock>
-        <TextBox x:Name="uxObsStudy" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="275" />
+        <TextBox x:Name="uxObsStudy" Text="{Binding ObsStudy}" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="275" />
 
         <TextBlock Margin="5" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Type:</TextBlock>
-        <TextBox x:Name="uxObsType" Grid.Row="1" Grid.Column="1" FontFamily="As Circular Light" VerticalAlignment="Center" HorizontalAlignment="Left" Width="275"/>
+        <TextBox x:Name="uxObsType" Text="{Binding ObsType}" Grid.Row="1" Grid.Column="1" FontFamily="As Circular Light" VerticalAlignment="Center" HorizontalAlignment="Left" Width="275"/>
 
 
         <TextBlock Margin="5" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lat DMS:</TextBlock>
-        <TextBox x:Name="uxObsLatDms" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+        <TextBox x:Name="uxObsLatDms" Text="{Binding ObsLatitudeDms}" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
 
 
         <TextBlock Margin="5" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lon DMS:</TextBlock>
-        <TextBox x:Name="uxObsLonDms" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+        <TextBox x:Name="uxObsLonDms" Text="{Binding ObsLongitudeDms}" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
 
 
 
 
-        <TextBlock Margin="5" Grid.Column="0" Grid.Row="4" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lat DD:</TextBlock>
-        <TextBox x:Name="uxLatDD" Grid.Column="1" Grid.Row="4" Visibility="Collapsed" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275" />
+        <TextBlock x:Name="uxLatDDLabel" Margin="5" Grid.Column="0" Grid.Row="4" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lat DD:</TextBlock>
+        <TextBox x:Name="uxLatDD" Text="{Binding ObsLatitudeDd}" Grid.Column="1" Grid.Row="4" Visibility="Collapsed" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275" />
 
 
-        <TextBlock Grid.Column="0" Grid.Row="5" Visibility="Collapsed"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" FontFamily="AS Circular Light">Lon DD:</TextBlock>
-        <TextBox x:Name="uxLonDD" Grid.Column="1" Grid.Row="5" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275" />
+        <TextBlock x:Name="uxLonDDLabel" Grid.Column="0" Grid.Row="5" Visibility="Collapsed"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" FontFamily="AS Circular Light">Lon DD:</TextBlock>
+        <TextBox x:Name="uxLonDD" Text="{Binding ObsLongitudeDd}" Grid.Column="1" Grid.Row="5" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275" />
 
         <TextBlock Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lat Hem:</TextBlock>
-        <TextBox x:Name="uxLatHem" Grid.Column="1" Grid.Row="6"  VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+        <TextBox x:Name="uxLatHem" Text="{Binding ObsLatitudeHemisphere}" Grid.Column="1" Grid.Row="6"  VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
 
 
         <TextBlock Margin="5" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">Lon Hem:</TextBlock>
-        <TextBox x:Name="uxLonHem" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+        <TextBox x:Name="uxLonHem" Text="{Binding ObsLongitudeHemisphere}" Grid.Column="1" Grid.Row="7" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
 
 
         <TextBlock Margin="5" Grid.Column="0" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">AGL Height:</TextBlock>
-        <TextBox x:Name="uxAglHeight" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+        <TextBox x:Name="uxAglHeight" Text="{Binding ObsAglHeight}" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
 
 
         <TextBlock Margin="5" Grid.Column="0" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="AS Circular Light">MSL Height:</TextBlock>
-        <TextBox x:Name="uxMslHeight" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+        <TextBox x:Name="uxMslHeight" Text="{Binding ObsMslHeight}" Grid.Column="1" Grid.Row="9" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
 
 
         <TextBlock Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" FontFamily="AS Circular Light">ICAO:</TextBlock>
-        <TextBox x:Name="uxIcao" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
+        <TextBox x:Name="uxIcao" Text="{Binding ObsIcao}" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center"  HorizontalAlignment="Left"  FontFamily="AS Circular Light" Width="275"/>
 
 
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="11" HorizontalAlignment="Right">
-            <Button x:Name="uxSubmit" Width="40"  MinWidth="20" HorizontalAlignment="Center" Click="uxSubmit_Click" Margin="10">Add</Button>
+            <Button x:Name="uxSubmit" Width="60"  MinWidth="20" HorizontalAlignment="Center" Click="uxSubmit_Click" Margin="10">Add</Button>
             <Button x:Name="uxCancel" Width="40" MinWidth="20" HorizontalAlignment="Center"  Margin="10">Cancel</Button>
         </StackPanel>
     </Grid>

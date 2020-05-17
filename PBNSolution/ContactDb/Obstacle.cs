@@ -5,9 +5,11 @@ namespace ObstacleDb
 {
     public partial class Obstacle
     {
+        public double ObsLongitudeDms;
+
         public int ObsId { get; set; }
         public string ObsStudy { get; set; }
-        public string ObstType { get; set; }
+        public string ObsType { get; set; }
         public double ObsLatitudeDms { get; set; }
         public double ObsLongtitudeDms { get; set; }
         public string ObsLatitudeHemisphere { get; set; }

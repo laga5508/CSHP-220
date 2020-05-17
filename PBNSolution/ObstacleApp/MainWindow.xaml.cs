@@ -16,6 +16,7 @@ using System.IO;
 using Microsoft.Win32;
 using ObstacleApp.Models;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 
 namespace ObstacleApp
 {
@@ -79,14 +80,21 @@ namespace ObstacleApp
 
         private void uxFileChange_Click(object sender, RoutedEventArgs e)
         {
+            var window = new ObstacleWindow();
+            window.Obstacle = selectedObstacle;
+
+            if (window.ShowDialog() == true)
+            {
+                App.ObstacleRepository.Update(window.Obstacle.ToRepositoryModel());
+                LoadObstacles();
+            }
         }
 
         private void uxFileDelete_Click(object sender, RoutedEventArgs e)
         {
-            App.ObstacleRepository.Remove(selectedObstacle.ObsStudy);
+            App.ObstacleRepository.Remove(selectedObstacle.ObsId);
             selectedObstacle = null;
-            LoadObstacles();
-            
+            LoadObstacles();            
         }
 
         private void uxFileDelete_Loaded(object sender, RoutedEventArgs e)
@@ -130,6 +138,21 @@ namespace ObstacleApp
             selectedObstacle = (ObstacleModel)uxObstacleList.SelectedValue;
         }
 
-        
+              private void uxFileChange_Loaded(object sender, RoutedEventArgs e)
+        {
+            uxFileChange.IsEnabled = (selectedObstacle != null);
+            uxContextFileChange.IsEnabled = uxFileChange.IsEnabled;
+        }
+
+        private void uxExportToGoogle_Loaded(object sender, RoutedEventArgs e)
+        {
+            UxContextExportToGoogleEarth.IsEnabled = (selectedObstacle != null);
+
+        }
+
+        private void UxExportToGoogleEarth_Click(object sender, RoutedEventArgs e)
+        {
+            GoogleEarth.printToGoogleEarth(selectedObstacle);
+        }
     }
 }

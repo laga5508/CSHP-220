@@ -23,13 +23,37 @@ namespace ObstacleApp
             InitializeComponent();
             ShowInTaskbar = false;
         }
+        int obstacleId;
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Obstacle != null)
+            {
+                uxSubmit.Content = "Update";
+                uxLatDD.Visibility = Visibility.Visible;
+                uxLatDDLabel.Visibility = Visibility.Visible;
+                uxLonDD.Visibility = Visibility.Visible;
+                uxLonDDLabel.Visibility = Visibility.Visible;
+                uxGrid.DataContext = Obstacle;
+                
+
+            }
+            else
+            {
+                Obstacle = new ObstacleModel();
+                Obstacle.ObsId = Obstacle.ObsId;
+            }
+
+           
+        }
+
         public ObstacleModel Obstacle { get; set; }
 
         private void uxSubmit_Click(object sender, RoutedEventArgs e)
         {
-            Obstacle = new ObstacleModel();
+            
+            Obstacle.ObsId = Obstacle.ObsId;
             Obstacle.ObsStudy = uxObsStudy.Text.ToUpper();
-            Obstacle.ObsType = uxObsType.Text.ToUpper();           
+            Obstacle.ObsType = uxObsType.Text.ToUpper();
             Obstacle.ObsLatitudeDms = Double.Parse(uxObsLatDms.Text);
             Obstacle.ObsLongitudeDms = Double.Parse(uxObsLonDms.Text);
             Obstacle.ObsLatitudeDd = Conversions.ConvertPosition(Obstacle.ObsLatitudeDms);
@@ -39,7 +63,6 @@ namespace ObstacleApp
             Obstacle.ObsAglHeight = int.Parse(uxAglHeight.Text);
             Obstacle.ObsMslHeight = int.Parse(uxMslHeight.Text);
             Obstacle.ObsIcao = uxIcao.Text.ToUpper();
-
 
             // This is the return value of ShowDialog( ) below
             DialogResult = true;
