@@ -7,6 +7,7 @@ namespace ObstacleApp.Models
     public class ObstacleModel
     {
         public int ObsId { get; set; }
+        public string ObsStatus { get; set; }
         public string ObsStudy { get; set; }
         public string ObsType { get; set; }
         public double ObsLatitudeDms { get; set; }

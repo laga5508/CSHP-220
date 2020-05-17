@@ -35,7 +35,7 @@ namespace ObstacleRepository
     {
         public List<RunwayModel> GetAll()
         {
-            var items = DatabaseManager.Instance.Runway
+            List<RunwayModel> items = DatabaseManager.Instance.Runway
                 .Select(t => new RunwayModel
                 {
                     Icao = t.Icao,

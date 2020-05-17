@@ -29,12 +29,13 @@ namespace ObstacleApp
         {
             InitializeComponent();
             LoadObstacles();
-            LoadRunways();
+          
         }
 
         private void LoadRunways()
         {
             var runways = App.RunwayRepsitory.GetAll();
+
         }
 
         private void LoadObstacles()
