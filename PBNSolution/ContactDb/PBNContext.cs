@@ -24,6 +24,8 @@ namespace ObstacleDb
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Data Source=.\\sqlexpress;Initial Catalog=PBN;integrated security=True");
+                //optionsBuilder.UseSqlServer("Data Source = 'seavvbifssrs03, 1450'; Initial Catalog = PBN; Integrated Security = True");
+
             }
         }
 

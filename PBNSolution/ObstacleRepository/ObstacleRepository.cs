@@ -116,6 +116,19 @@ namespace ObstacleRepository
 
                 return false;
             }
+        public void RemoveAll()
+        {
+            var items = DatabaseManager.Instance.Obstacle
+                  .Select(t => new ObstacleModel
+                  { ObsId = t.ObsId }).ToList();
+
+            foreach (var obs in items)
+            {
+                Remove(obs.ObsId);
+            }          
+                    
+           
+        }
 
             public bool Remove(int ObsId)
             {

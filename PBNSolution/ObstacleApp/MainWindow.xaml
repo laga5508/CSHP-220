@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ObstacleApp"
         mc:Ignorable="d"
-        Title="Obstacle Invetory" Height="450" Width="1000">
+        Title="Obstacle Inventory" Height="750" Width="1050">
 
     <Window.Resources>
         <Style x:Key="alternatingListViewItemStyle" TargetType="{x:Type ListViewItem}">
@@ -25,7 +25,7 @@
     
     <StackPanel >
         <Menu Height="25">
-            <MenuItem x:Name="uxFileNew" Header="_File">
+            <MenuItem x:Name="uxFileNew" Header="_File" Width="50">
                 <MenuItem x:Name="uxNew" Header=" _New Obstacle"  Click="uxNew_Click"/>
                 <MenuItem x:Name="uxImport" Header=" _Import" Click="uxImport_Click"/>
                 <MenuItem x:Name="uxFileChange" Header="_Modify" Click="uxFileChange_Click" 
@@ -36,13 +36,14 @@
             <MenuItem x:Name="uxAbout" Header=" _About" Click="uxAbout_Click"/>
         </Menu>
 
-        <ListView x:Name="uxObstacleList" SelectionChanged="uxObstacleList_SelectionChanged" Height="410" ItemContainerStyle="{StaticResource alternatingListViewItemStyle}" AlternationCount="2" >
+        <ListView x:Name="uxObstacleList" SelectionChanged="uxObstacleList_SelectionChanged" Height="807" ItemContainerStyle="{StaticResource alternatingListViewItemStyle}" AlternationCount="2" >
             <ListView.ContextMenu>
                 <ContextMenu>
                     <MenuItem x:Name="uxContextFileNew" Header="_New" />
                     <MenuItem x:Name="uxContextFileChange" Header="_Modify" Click="uxFileChange_Click" Loaded="uxFileChange_Loaded"   />
                     <MenuItem x:Name="UxContextExportToGoogleEarth" Loaded="uxExportToGoogle_Loaded" Click="UxExportToGoogleEarth_Click" Header="_Export to Google Earth"/>
-                    <MenuItem x:Name="uxContextFileDelete" Header="_Delete" />
+                    <MenuItem x:Name="uxContextFileDelete" Header="_Delete" Click="uxFileDelete_Click" Loaded="uxFileDelete_Loaded"/>
+                    <MenuItem x:Name="uxContextFileDeleteAll" Header="_Delete All Obstacles" Click="uxContextFileDeleteAll_Click" IsEnabled="False"/>
                 </ContextMenu>
             </ListView.ContextMenu>
             <ListView.View>

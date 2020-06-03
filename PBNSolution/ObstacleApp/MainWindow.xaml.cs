@@ -28,20 +28,19 @@ namespace ObstacleApp
         public MainWindow()
         {
             InitializeComponent();
-            LoadObstacles();
-          
+            LoadObstacles();     
         }
 
-        private void LoadRunways()
-        {
-            var runways = App.RunwayRepsitory.GetAll();
-
-        }
+        
 
         private void LoadObstacles()
         {
             var obstacles = App.ObstacleRepository.GetAll();         
             uxObstacleList.ItemsSource = obstacles.Select(t => ObstacleModel.ToModel(t)).ToList();
+            if (obstacles.Count>0)
+            {
+                uxContextFileDeleteAll.IsEnabled = true;
+            }
         }
 
         private void uxImport_Click(object sender, RoutedEventArgs e)
@@ -53,9 +52,12 @@ namespace ObstacleApp
             if (result == true)
             {
                 string fileName = ImportFile.FileName;
-                
+                int obsAddCount = ObsImport.UpdateObstacles(fileName);
+                LoadObstacles();
+                MessageBox.Show($"{obsAddCount} obstacles have been added.");
             }
-        }
+                        
+        }            
 
         private void uxAbout_Click(object sender, RoutedEventArgs e)
         {
@@ -95,7 +97,6 @@ namespace ObstacleApp
                 LoadObstacles();
             }
         }
-
         private void uxFileDelete_Click(object sender, RoutedEventArgs e)
         {
             App.ObstacleRepository.Remove(selectedObstacle.ObsId);
@@ -108,8 +109,6 @@ namespace ObstacleApp
             uxFileDelete.IsEnabled = (selectedObstacle != null);
             uxContextFileDelete.IsEnabled = uxFileDelete.IsEnabled;
         }
-
-
 
         private GridViewColumnHeader listViewSortCol = null;
         private SortAdorner listViewSortAdorner = null;
@@ -159,6 +158,20 @@ namespace ObstacleApp
         private void UxExportToGoogleEarth_Click(object sender, RoutedEventArgs e)
         {
             GoogleEarth.printToGoogleEarth(selectedObstacle);
+        }
+                
+
+        private void uxContextFileDeleteAll_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("All records will be deleted?", "DELETE CONFIRMATION", System.Windows.MessageBoxButton.YesNo);
+
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+              App.ObstacleRepository.RemoveAll();
+                LoadObstacles();
+            }
+               
+
         }
     }
 }
