@@ -8,9 +8,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <h2>From @Model.From</h2>
-    <h1> Happy Birtday @Model.To!</h1>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
 </head>
-<body>
+<body  class="text-center">
+    <h2>From: @Model.From</h2>
+    <h2>To: @Model.To</h2>
+    <h2 >@Model.Message!</h2>
 </body>
 </html>

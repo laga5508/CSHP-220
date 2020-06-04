@@ -12,6 +12,9 @@ namespace BDayCardGenerator.Models
         public string From { get; set; }
         [Required(ErrorMessage = " Please enter Name")]
         public string To { get; set; }
+
+        [Required(ErrorMessage = "Enter desired message")]
+        public string Message { get; set; }
         public bool? WillAttend { get; set; }
     }
 }
